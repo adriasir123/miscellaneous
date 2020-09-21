@@ -1,0 +1,8 @@
+#!/bin/bash
+for value in $(vagrant global-status | grep 'virtualbox' | cut -d ' ' -f1)
+do
+	vagrant destroy $value
+done
+
+
+# This script deletes all vagrant vms that are using virtualbox as a provider
